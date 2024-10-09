@@ -6,10 +6,17 @@ interface DialogProps {
   isOpen: boolean;
 }
 
+// 1. Typescript specifies contracts for function's arguments and return values, and enforces them.
+//    No more trivial runtime errors.
+// 2. Typescript can help you autocomplete only the correct properties.
+// 3. Typescript can infer types when you use if.
+
 export const Dialog = ({ onClose, isOpen }: DialogProps) => {
   if (!isOpen) {
     return <></>;
   }
+
+  isOpen;
 
   const [variant, setVariant] = React.useState<'dark' | 'light'>('dark');
 
